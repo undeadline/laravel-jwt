@@ -1,0 +1,43 @@
+{
+    "name": "undeadline/laravel-jwt",
+    "description": "Package for Laravel what implement jwt standard",
+    "keywords": ["jwt", "authentication", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeny Mishanin",
+            "email": "ermak321@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "type": "library",
+    "require": {
+		"php": ">=7.2",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "9.*",
+        "orchestra/testbench": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Undeadline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Undeadline\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Undeadline\\JWTServiceProvider"
+            ],
+            "aliases": {
+                "JWT": "Undeadline\\JWTFacade"
+            }
+        }
+    }
+}
