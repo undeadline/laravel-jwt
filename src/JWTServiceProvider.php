@@ -17,7 +17,7 @@ class JWTServiceProvider extends ServiceProvider
             __DIR__ . '/config/config.php', 'jwt'
         );
 
-        $this->app->bind(JWT::class);
+        $this->app->singleton(JWT::class);
     }
 
     /**
