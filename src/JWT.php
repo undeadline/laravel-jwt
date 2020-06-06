@@ -59,9 +59,14 @@ class JWT
         return $body . '.' . $signature;
     }
 
-    public function getPayload()
+    public function getPayload($name = null)
     {
-        return $this->payload ? unserialize(base64_decode($this->payload)) : [];
+        $payload = $this->payload ? unserialize(base64_decode($this->payload)) : [];
+
+        if (!is_null($name))
+            return $payload[$name];
+
+        return $payload;
     }
 
     /**
